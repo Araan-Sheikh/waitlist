@@ -2,5 +2,6 @@ node_modules
 .next
 out
 dist
-.env*
+.env
+.env.local
 data/*.csv

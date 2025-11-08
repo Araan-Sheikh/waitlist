@@ -32,7 +32,7 @@ export default function Page() {
       "2027 — Marketplace"
     ], duration: 4500 },
     { type: "vision", text: "The Vercel for VPS Panels", subtitle: "Make server management simple.", duration: 3500 },
-    { type: "founder", text: "Built by TUMULL I.N.C.", subtitle: "Mohammed Araan Sheikh, Founder & CEO", duration: 3500 },
+    { type: "founder", text: "Built by is-cod.in", subtitle: "Mohammed Araan Sheikh, Founder & CTO", duration: 3500 },
     { type: "end", text: "Join the waitlist.", subtitle: "Early access Q1 2026", duration: 3000 }
   ];
   useEffect(() => {
@@ -107,7 +107,7 @@ export default function Page() {
             &gt; The universal installer <br/>for developer panels<span className="animate-blink">_</span>
           </h1>
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
-            Install and manage Pterodactyl, CapRover, Coolify and more on any VPS with one command.
+            Install a Go agent with one command, connect to the web dashboard, and deploy Pterodactyl, CapRover, Coolify and more with live logs.
           </p>
         </div>
         <div className="terminal rounded-lg p-4">
@@ -149,14 +149,14 @@ export default function Page() {
         <div className="terminal mt-6 rounded-lg p-4">
           <pre className="text-xs text-slate-600 dark:text-slate-400">
             <code>
-{`# Install agent
+{`# 1. Install agent on your VPS
 curl -fsSL install.is-host.in/install.sh | bash
 
-# Deploy panel
-is-host deploy pterodactyl
+# 2. Copy the token from output
+# Agent registered: abc123...
 
-# Monitor status
-is-host status`}
+# 3. Go to is-host.in
+# Paste token → select panel → deploy with live logs`}
             </code>
           </pre>
         </div>

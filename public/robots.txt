@@ -1,0 +1,9 @@
+# is-host.in robots.txt
+User-agent: *
+Allow: /
+
+# Disallow API routes from crawling
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://is-host.in/sitemap.xml
