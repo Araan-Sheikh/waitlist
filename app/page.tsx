@@ -196,6 +196,38 @@ curl -fsSL install.is-host.in/install.sh | bash
             </div>
           </div>
         )}
+        <div className="mt-16">
+          <h2 className="mb-6 text-2xl font-bold">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            <FAQ 
+              question="When does it launch?"
+              answer="MVP launches Q1 2026 (January - March 2026). Early access for waitlist members starts first."
+            />
+            <FAQ 
+              question="Is it free?"
+              answer="Yes! The open beta is completely free. We'll introduce premium features later for enterprise users."
+            />
+            <FAQ 
+              question="Which panels are supported?"
+              answer="Launch: Pterodactyl, CapRover, Coolify, Dockploy. More panels added based on community demand."
+            />
+            <FAQ 
+              question="Do I need Docker installed?"
+              answer="No. The agent auto-detects your OS and installs all dependencies (Docker, SSL, DNS) automatically."
+            />
+            <FAQ 
+              question="What VPS providers work?"
+              answer="Any Linux VPS: DigitalOcean, Linode, Vultr, Hetzner, AWS, Azure, or self-hosted servers."
+            />
+            <FAQ 
+              question="Can I manage multiple servers?"
+              answer="Yes! The centralized dashboard lets you manage all your VPS instances from one place."
+            />
+          </div>
+        </div>
+
         <footer className="mt-16 border-t border-slate-200 pt-8 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
           <p>is-host.in · Early access opens Q1 2026</p>
         </footer>
@@ -211,6 +243,28 @@ function Feature({ label, desc }: { label: string; desc: string }) {
         <span className="font-medium">{label}</span>
         <span className="ml-2 text-slate-500 dark:text-slate-400">{desc}</span>
       </div>
+    </div>
+  );
+}
+
+function FAQ({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="rounded-lg border border-slate-200 dark:border-slate-800">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-900"
+      >
+        <span className="text-sm font-medium">{question}</span>
+        <span className="text-emerald-600 dark:text-emerald-400">
+          {isOpen ? "−" : "+"}
+        </span>
+      </button>
+      {isOpen && (
+        <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-400">
+          {answer}
+        </div>
+      )}
     </div>
   );
 }
