@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 export default function Page() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle"|"loading"|"success"|"error">("idle");
@@ -93,6 +94,12 @@ export default function Page() {
   }
   return (
     <div className="grid-bg min-h-screen">
+      <Link
+        href="/demo"
+        className="fixed left-4 top-4 z-50 rounded border border-slate-300 bg-white px-3 py-1.5 text-xs transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700"
+      >
+        demo
+      </Link>
       <button
         onClick={toggleTheme}
         className="fixed right-4 top-4 z-50 rounded border border-slate-300 bg-white px-3 py-1.5 text-xs transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700"
