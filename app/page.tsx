@@ -100,17 +100,17 @@ export default function Page() {
       >
         {theme === "light" ? "dark" : "light"}
       </button>
-      <section className="mx-auto max-w-3xl px-6 py-16">
+      <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16">
         <div className="mb-8">
           <p className="text-sm text-slate-500 dark:text-slate-400">$ is-host init</p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight md:text-4xl">
+          <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
             &gt; The universal installer <br/>for developer panels<span className="animate-blink">_</span>
           </h1>
           <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
             Install a Go agent with one command, connect to the web dashboard, and deploy Pterodactyl, CapRover, Coolify and more with live logs.
           </p>
         </div>
-        <div className="terminal rounded-lg p-4">
+        <div className="terminal rounded-lg p-3 sm:p-4">
           <div className="mb-3 flex items-center gap-2 border-b border-slate-200 pb-2 dark:border-slate-800">
             <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
             <div className="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
@@ -118,23 +118,25 @@ export default function Page() {
             <span className="ml-2 text-xs text-slate-500 dark:text-slate-400">waitlist.sh</span>
           </div>
           <form onSubmit={submit}>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-emerald-500">$</span>
-              <label htmlFor="email" className="sr-only">Email</label>
-              <input
-                id="email"
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                autoComplete="email"
-                className="flex-1 bg-transparent text-sm focus:outline-none"
-              />
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+              <div className="flex flex-1 items-center gap-2">
+                <span className="text-sm text-emerald-500">$</span>
+                <label htmlFor="email" className="sr-only">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  autoComplete="email"
+                  className="flex-1 bg-transparent text-sm focus:outline-none"
+                />
+              </div>
               <button
                 type="submit"
                 disabled={status==='loading'}
-                className="rounded bg-emerald-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-emerald-700 disabled:opacity-50"
+                className="w-full rounded bg-emerald-600 px-4 py-2 text-sm font-medium text-white hover:bg-emerald-700 disabled:opacity-50 sm:w-auto sm:px-3 sm:py-1.5 sm:text-xs"
               >
                 {status === 'loading' ? '...' : 'join'}
               </button>
@@ -146,8 +148,8 @@ export default function Page() {
             )}
           </form>
         </div>
-        <div className="terminal mt-6 rounded-lg p-4">
-          <pre className="text-xs text-slate-600 dark:text-slate-400">
+        <div className="terminal mt-6 rounded-lg p-3 sm:p-4">
+          <pre className="overflow-x-auto text-xs text-slate-600 dark:text-slate-400">
             <code>
 {`# 1. Install agent on your VPS
 curl -fsSL install.is-host.in/install.sh | bash
@@ -160,7 +162,7 @@ curl -fsSL install.is-host.in/install.sh | bash
             </code>
           </pre>
         </div>
-        <div className="mt-12 space-y-4 text-sm">
+        <div className="mt-8 space-y-3 text-sm sm:mt-12 sm:space-y-4">
           <Feature label="one-command" desc="curl | bash — zero manual setup" />
           <Feature label="verified" desc="Pre-tested scripts with SSL & DNS" />
           <Feature label="multi-panel" desc="Pterodactyl, CapRover, Coolify, Dockploy" />
@@ -168,10 +170,10 @@ curl -fsSL install.is-host.in/install.sh | bash
           <Feature label="agent-based" desc="Lightweight Go binary with WebSocket logs" />
           <Feature label="auto-detect" desc="OS, Docker, dependencies — all configured" />
         </div>
-        <div className="mt-8">
+        <div className="mt-6 sm:mt-8">
           <button
             onClick={startCinematic}
-            className="group flex items-center gap-2 rounded border border-emerald-600 bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-emerald-700 hover:shadow-lg"
+            className="group flex w-full items-center justify-center gap-2 rounded border border-emerald-600 bg-emerald-600 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-emerald-700 hover:shadow-lg sm:w-auto"
           >
             <span>▶</span>
             <span>Watch the story</span>
@@ -196,11 +198,11 @@ curl -fsSL install.is-host.in/install.sh | bash
             </div>
           </div>
         )}
-        <div className="mt-16">
-          <h2 className="mb-6 text-2xl font-bold">
+        <div className="mt-12 sm:mt-16">
+          <h2 className="mb-4 text-xl font-bold sm:mb-6 sm:text-2xl">
             Frequently Asked Questions
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <FAQ 
               question="When does it launch?"
               answer="MVP launches Q1 2026 (January - March 2026). Early access for waitlist members starts first."
@@ -228,7 +230,7 @@ curl -fsSL install.is-host.in/install.sh | bash
           </div>
         </div>
 
-        <footer className="mt-16 border-t border-slate-200 pt-8 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
+        <footer className="mt-12 border-t border-slate-200 pt-6 text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400 sm:mt-16 sm:pt-8">
           <p>is-host.in · Early access opens Q1 2026</p>
         </footer>
       </section>
@@ -237,11 +239,11 @@ curl -fsSL install.is-host.in/install.sh | bash
 }
 function Feature({ label, desc }: { label: string; desc: string }) {
   return (
-    <div className="flex gap-3">
-      <span className="text-emerald-500">→</span>
-      <div>
+    <div className="flex gap-2 sm:gap-3">
+      <span className="text-emerald-500 flex-shrink-0">→</span>
+      <div className="flex flex-col sm:block">
         <span className="font-medium">{label}</span>
-        <span className="ml-2 text-slate-500 dark:text-slate-400">{desc}</span>
+        <span className="sm:ml-2 text-slate-500 dark:text-slate-400">{desc}</span>
       </div>
     </div>
   );
@@ -253,15 +255,15 @@ function FAQ({ question, answer }: { question: string; answer: string }) {
     <div className="rounded-lg border border-slate-200 dark:border-slate-800">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between p-4 text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-900"
+        className="flex w-full items-start justify-between gap-3 p-3 text-left transition-colors hover:bg-slate-50 dark:hover:bg-slate-900 sm:items-center sm:p-4"
       >
-        <span className="text-sm font-medium">{question}</span>
-        <span className="text-emerald-600 dark:text-emerald-400">
+        <span className="text-sm font-medium pr-2">{question}</span>
+        <span className="text-lg text-emerald-600 dark:text-emerald-400 flex-shrink-0">
           {isOpen ? "−" : "+"}
         </span>
       </button>
       {isOpen && (
-        <div className="border-t border-slate-200 px-4 py-3 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-400">
+        <div className="border-t border-slate-200 px-3 py-3 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-400 sm:px-4">
           {answer}
         </div>
       )}
