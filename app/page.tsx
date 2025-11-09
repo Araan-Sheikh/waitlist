@@ -107,7 +107,7 @@ export default function Page() {
       >
         {theme === "light" ? "dark" : "light"}
       </button>
-      <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16">
+      <section className="mx-auto max-w-3xl px-4 pt-20 pb-8 sm:px-6 sm:pt-24 sm:pb-16">
         <div className="mb-8">
           <p className="text-sm text-slate-500 dark:text-slate-400">$ is-host init</p>
           <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
